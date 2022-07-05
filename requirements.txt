@@ -1,3 +1,3 @@
 pandas
-clasunspsc>=0.3.8
+clasunspsc
 streamlit
