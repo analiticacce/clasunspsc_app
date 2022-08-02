@@ -5,5 +5,7 @@ st.title("Clasificador UNSPSC")
 st.header("GAEC - Colombia Compra Eficiente")
 name = st.text_input("Ingrese productos", "")
 if(st.button('Submit')):
-    result = recomendador_api(name,10)
+    dicc = recomendador_api(name,10)
+    dicc={'Código Producto':dicc['Código Producto'],'Nombre Producto':dicc['Nombre Producto'],'Nombre Clase':dicc['Nombre Clase']}
+    result=pd.DataFrame(dicc)
     st.table(result)
