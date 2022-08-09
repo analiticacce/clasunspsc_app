@@ -11,7 +11,7 @@ st.header("GAEC - Colombia Compra Eficiente")
 name = st.text_input("Ingrese productos", "")
 if(st.button('Submit')):
     dicc = recomendador_api(name,10)
-    if list(dicc.keys())[0]=="Result"
+    if list(dicc.keys())[0]=="Result":
          result=pd.DataFrame(dicc)
     else:
           dicc={'Código Producto':dicc['Código Producto'],'Nombre Producto':dicc['Nombre Producto'],'Nombre Clase':dicc['Nombre Clase']}
