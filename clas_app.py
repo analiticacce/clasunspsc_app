@@ -12,13 +12,13 @@ name = st.text_input("Ingrese productos", "")
 if(st.button('Submit')):
     dicc = recomendador_api(name,10)
     if list(dicc.keys())[0]=="Result":
-         result=pd.DataFrame(dicc)
+         st.header("Nada que recomendar")
     else:
           dicc={'Código Producto':dicc['Código Producto'],'Nombre Producto':dicc['Nombre Producto'],'Nombre Clase':dicc['Nombre Clase']}
           result=pd.DataFrame(dicc)
-    st.table(result)
-    csv = convert_df(result)
-    st.download_button(
+          st.table(result)
+          csv = convert_df(result)
+          st.download_button(
      label="Descargue CSV",
      data=csv,
      file_name='large_df.csv',
